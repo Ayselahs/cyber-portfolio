@@ -1,0 +1,961 @@
+[
+  {
+    "slug": "endpoint-forensics",
+    "title": "Endpoint Forensics and Threat Triage Using Cyber Triage",
+    "videoUrl": "",
+    "image": "/IRPlanning.png",
+    "tags": [
+      "Windows Forensics",
+      "Incident Response",
+      "Threat Triage",
+      "Endpoint Security"
+    ],
+    "year": 2024,
+    "objective": "",
+    "tools": [""],
+    "steps": [""],
+    "concepts": [""],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "slug": "dns-config",
+    "title": "Demonstrating DNS Configuration in Microsoft Security",
+    "videoUrl": "",
+    "image": "/DNSConfig.png",
+    "tags": [
+      "Windows Security",
+      "Active Directory",
+      "User Management",
+      "Security Hardening"
+    ],
+    "year": 2024,
+    "objective": "The objective of this project was to configure Domain Name System (DNS) services in a Windows Server environment and validate name resolution functionality across a simulated enterprise network. This lab reinforces core skills needed to manage secure and resilient network infrastructure.",
+    "tools": [
+      "Windows Server 2019",
+      "DNS Manager",
+      "PowerShell",
+      "TDX Arena Lab"
+    ],
+    "steps": [
+      "Deployed and configured a DNS role on a Windows Server instance",
+      "Created forward and reverse lookup zones to support name resolution",
+      "Added DNS records (A, CNAME, PTR) manually and via DHCP dynamic updates",
+      "Verified propagation and tested functionality using PowerShell (Resolve-DnsName) and GUI tools",
+      "Diagnosed and fixed resolution failures due to misconfigured records"
+    ],
+    "concepts": [
+      "Ensured secure zone transfers to prevent unauthorized data replication",
+      "Implemented record validation and logging for auditing name resolution behavior",
+      "Demonstrated how DNS misconfigurations can lead to security issues like misrouting or DNS spoofing",
+      "Showed how Blue Teamers monitor and protect DNS infrastructure in Windows-based enterprise environments"
+    ],
+    "reflections": "This lab helped solidify my understanding of how DNS operates within a secured Microsoft domain and why maintaining correct and secure DNS settings is essential to ensuring uptime and protecting against spoofing or misdirection attacks. In a real SOC environment, misconfigured DNS is often the root of internal access issues and an entry point for attackers.",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "network-traffic",
+    "title": "Analyzing Network Traffic with Wireshark",
+    "videoUrl": "",
+    "image": "/BehanceTitle.png",
+    "tags": [
+      "Network Forensics",
+      "Packet Analysis",
+      "Wireshark",
+      "Intrusion Detection"
+    ],
+    "year": 2025,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "wireshark-analysis",
+    "title": "Exploring Network Analysis with Wireshark",
+    "videoUrl": "",
+    "image": "/WiresharkAnalysis.png",
+    "tags": [
+      "Network Forensics",
+      "Wireshark",
+      "Packet Analysis",
+      "Intrusion Detection",
+      "TCP/IP"
+    ],
+    "year": 2024,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "access-control",
+    "title": "Implementing Access Control Lists in Linux",
+    "videoUrl": "",
+    "image": "/BehanceTitle.png",
+    "tags": [
+      "Windows Security",
+      "File Permissions",
+      "Access Control",
+      "System Hardening"
+    ],
+    "year": 2025,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "acl-security",
+    "title": "Demonstrating Access Control Lists Implementation for Network Security",
+    "videoUrl": "",
+    "image": "/ACLNetworkSecurity.png",
+    "tags": [
+      "Network Security",
+      "ACLs",
+      "Traffic Filtering",
+      "Firewall Rules",
+      "Linux Networking"
+    ],
+    "year": 2024,
+    "objective": "",
+    "tools": [""],
+    "steps": [""],
+    "concepts": [""],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "slug": "honypot-attack",
+    "title": "Deploying and Testing a Secure SSH Honeypot",
+    "videoUrl": "https://www.youtube.com/embed/F-adZW9ATMU?si=ua6asxtRRoUKpikr",
+    "image": "/HoneypotAttack.png",
+    "tags": [
+      "Linux Security",
+      "Threat Detection",
+      "SSH Security",
+      "Cyber Deception"
+    ],
+    "year": 2025,
+    "objective": "This virtual lab guided me through the deployment of a Cowrie-based SSH honeypot on an isolated Ubuntu Server instance. The goal was to attract unauthorized login attempts, record attacker behaviour, and extract actionable threat intelligence. All steps were performed in a controlled TDX Arena environment using dedicated virtual machines. The plan is to Validate that the target system hosts no unintended services prior to honeypot deployment. Establish a restricted user account for Cowrie to enforce isolation. Install and configure Cowrie in a Python virtual environment. Enable both SSH and Telnet deception to expand the honeypot’s attack surface. Simulate attacker reconnaissance with Nmap scans. Launch a brute-force SSH credential attack using Hydra. Verify successful deception by inspecting system hostname after login. Monitor and analyse Cowrie logs to extract attacker IPs and commands",
+    "tools": [
+      "Ubuntu Server 20.04 LTS",
+      "Cowrie SSH/Telnet Honeypot",
+      "Python 3 virtual environment (venv)",
+      "Nmap network mapper",
+      "Hydra brute-force tool",
+      "Linux shell utilities (useradd, git, tail, less)"
+    ],
+    "steps": [
+      "Deployed and configured a DNS role on a Windows Server instance",
+      "Created forward and reverse lookup zones to support name resolution",
+      "Added DNS records (A, CNAME, PTR) manually and via DHCP dynamic updates",
+      "Verified propagation and tested functionality using PowerShell (Resolve-DnsName) and GUI tools",
+      "Diagnosed and fixed resolution failures due to misconfigured records"
+    ],
+    "concepts": [
+      "Deployment of an isolated deception environment",
+      "Secure user management and privilege restriction",
+      "Use of Python virtual environments for application isolation",
+      "Configuration of multi-protocol honeypot services",
+      "Network reconnaissance with Nmap",
+      "Brute-force attack simulation using Hydra",
+      "Forensic analysis of honeypot logs"
+    ],
+    "reflections": "Honeypots act as a proactive defence mechanism by diverting malicious traffic away from production systems and generating real-world attack data. This lab demonstrated how a properly configured SSH honeypot can uncover attacker tactics, tools and procedures without elevating risk. The captured logs provide threat intelligence that can inform hardening strategies and intrusion detection rule sets.",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+
+  {
+    "slug": "dns-demo",
+    "title": "Demonstrating DNS Configuration",
+    "videoUrl": "",
+    "image": "/DNSConfig.png",
+    "tags": [
+      "Network Configuration",
+      "Windows Server",
+      "Linux Networking",
+      "Name Resolution"
+    ],
+    "year": 2024,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "aws-iam",
+    "title": "Managing IAM Users and Permissions in AWS",
+    "videoUrl": "",
+    "image": "/AWSCloudIAM.png",
+    "tags": [
+      "Cloud Security",
+      "IAM",
+      "AWS",
+      "User Management",
+      "Access Control"
+    ],
+    "year": 2025,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "custom-vpc",
+    "title": "Deploying a VPC with Subnets, Routing, and a Web Server in AWS",
+    "videoUrl": "",
+    "image": "/CustomVPC.png",
+    "tags": [
+      "Cloud Networking",
+      "AWS",
+      "VPC",
+      "Subnets",
+      "Routing",
+      "Web Server"
+    ],
+    "year": 2025,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "load-balancing",
+    "title": "Scale and Load Balance Your Architecture in AWS",
+    "videoUrl": "",
+    "image": "/LoadBalancing.png",
+    "tags": [
+      "Cloud Architecture",
+      "Auto Scaling",
+      "Load Balancing",
+      "AWS",
+      "High Availability"
+    ],
+    "year": 2025,
+    "objective": "",
+    "tools": [],
+    "steps": [],
+    "concepts": [],
+    "reflections": "",
+    "resources": [
+      {
+        "id": "endpoint-1",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon1.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon2.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      },
+      {
+        "id": "endpoint-3",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "icon": "/icons/icon3.png",
+        "title": "Endpoint Security",
+        "description": "Endpoint Security"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [
+          { "label": "Project Objective", "id": "objective" },
+          { "label": "Lab Goal", "id": "lab" }
+        ]
+      },
+      {
+        "label": "Tools",
+        "items": [
+          { "label": "Toolset", "id": "toolset" },
+          { "label": "Enviornment", "id": "enviornment" },
+          { "label": "Technology Stack", "id": "stack" }
+        ]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Enviornment Preperation", "id": "enviornment" },
+          { "label": "Cowrie Setup", "id": "setup" },
+          { "label": "Configuration Tuning", "id": "config" },
+          { "label": "Service Activation", "id": "activation" },
+          { "label": "Attack Simulation", "id": "attack" },
+          { "label": "Log Analysis", "id": "analysis" }
+        ]
+      },
+      {
+        "label": "Concepts",
+        "items": [
+          { "label": "Security Concepts", "id": "concept" },
+          { "label": "Key Principles", "id": "principles" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [
+          { "label": "Lessons Learned", "id": "lessons" },
+          { "label": "Key Takeaways", "id": "takeaways" }
+        ]
+      }
+    ]
+  }
+]
