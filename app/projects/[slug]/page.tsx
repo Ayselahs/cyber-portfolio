@@ -5,15 +5,14 @@ import { ScrollNav, Section } from "../../../components/scrollNav";
 import Image from "next/image";
 import type { Project } from "@/data/project";
 
-export const setProjects = Projects as Project[];
-
 export default async function ProjectsPage({
   params,
 }: {
   params: { slug: string };
 }) {
   const { slug } = await params;
-  const project = setProjects.find((p) => p.slug === slug);
+  const projects: Project[] = Projects;
+  const project = projects.find((p) => p.slug === slug);
   if (!project) notFound();
 
   const groups: Section[] = project.sidebar ?? [];
