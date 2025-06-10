@@ -8,7 +8,7 @@ import type { Project } from "@/data/project";
 export default async function ProjectsPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
   const projects: Project[] = Projects;
