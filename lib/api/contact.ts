@@ -1,27 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import rateLimit from "express-rate-limit";
 import { escape } from "validator";
-import  from "../../lib/mongodb";
-import { error } from "console";
-
-// Rate limiter
-const limiter = rateLimit({
-  windowMs: 60_000,
-  max: 5,
-  handler: (_req, res) => {
-    res
-      .status(429)
-      .json({ error: "Too many requests. Try again in a minute." });
-  },
-});
+import { getDatabase } from "../../lib/mongodb";
+import { rateLimiterNext } from "./rateLimiter";
 
 async function runRateLimiter(req: NextApiRequest, res: NextApiResponse) {
-  return new Promise<void>((resolve, reject) => {
-    limiter(req, res, (err: any) => {
-      if (err) return reject(err);
-      resolve();
-    });
-  });
+  await rateLimiterNext(req, res);
 }
 
 // Apply Rate Limiting
@@ -96,23 +79,18 @@ export default async function handler(
   try {
     const db = await getDatabase();
     const collection = db.collection("contacts");
-
-    const document = {
+    await collection.insertOne({
       name: safeName,
       email: safeEmail,
       topic: safeTopic,
       message: safeMessage,
       submittedAt: new Date(),
-      ipAddress: req.headers["x-forwarded-for"] || req.socket.remoteAddress,
-    };
-
-    const result = await collection.insertOne(document);
-    if (!result.acknowledged) {
-      throw new Error("MongoDB insert was not acknowledged");
-    }
-  } catch (err) {
+    });
+  } catch (err: unknown) {
     console.error("MongoDB insertion error:", err);
-    return res.status(500).json({ error: "Failed to save contact form." });
+    return res
+      .status(500)
+      .json({ error: "Database Error: Failed to save contact form." });
   }
 
   return res.status(200).json({ success: true });
