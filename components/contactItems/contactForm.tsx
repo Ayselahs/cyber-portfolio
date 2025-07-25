@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { CaptchWidget } from "./captchaWidget";
 import SecureBadge from "./secureBadge";
 
@@ -144,7 +145,7 @@ export default function ContactForm() {
   const [email, setEmail] = useState("");
   const [topic, setTopic] = useState("");
   const [message, setMessage] = useState("");
-  const [captchaToken, setCaptchaToken] = useState("");
+  const [captchaToken, setCaptchaToken] = useState<string>("");
   const [status, setStatus] = useState<
     "idle" | "submitting" | "success" | "error"
   >("idle");
@@ -157,7 +158,7 @@ export default function ContactForm() {
     { value: "other", label: "Other" },
   ];
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("submitting");
     setErrorMsg("");
@@ -167,8 +168,26 @@ export default function ContactForm() {
       setStatus("error");
       return;
     }
+
     if (!captchaToken) {
-      setErrorMsg("Please complete the CAPTCHA.");
+      alert("Please wait for Captcha validation");
+    }
+
+    if (!window.grecaptcha) {
+      setErrorMsg("CAPTCHA has not loaded.");
+      setStatus("error");
+      return;
+    }
+
+    let token: string;
+    try {
+      token = await window.grecaptcha.execute(
+        process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!,
+        { action: "contact_form" }
+      );
+    } catch (err) {
+      console.error("reCaptcha error:", err);
+      setErrorMsg("reCaptcha failed. Please try again.");
       setStatus("error");
       return;
     }
@@ -177,7 +196,13 @@ export default function ContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, topic, message, captchaToken }),
+        body: JSON.stringify({
+          name,
+          email,
+          topic,
+          message,
+          captchaToken: token,
+        }),
       });
       const json = await res.json();
       if (!json.success) {
@@ -188,7 +213,7 @@ export default function ContactForm() {
       setEmail("");
       setTopic("");
       setMessage("");
-      setCaptchaToken("");
+      //setCaptchaToken("");
     } catch (err: unknown) {
       console.error(err);
 

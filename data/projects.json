@@ -1,525 +1,307 @@
 [
   {
-    "slug": "endpoint-forensics",
+    "slug": "endpoint-forensics-triage",
     "title": "Endpoint Forensics and Threat Triage Using Cyber Triage",
-    "videoUrl": "",
+    "statement": "In this video, I’ll walk you through the process of performing endpoint forensics and threat triage with Cyber Triage",
+    "videoUrl": "https://www.youtube.com/embed/0k82xPkHx3Y?si=wm93kukDvrvaU7xH",
     "image": "/IRPlanning.png",
     "tags": [
-      "Windows Forensics",
-      "Incident Response",
+      "Endpoint Forensics",
       "Threat Triage",
-      "Endpoint Security"
+      "Incident Response",
+      "Cyber Triage"
     ],
-    "year": 2024,
-    "objective": "",
-    "tools": [""],
-    "steps": [""],
-    "concepts": [""],
-    "reflections": "",
-    "resources": [
-      {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      }
-    ],
-    "sidebar": [
-      {
-        "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
-      },
-      {
-        "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
-      },
-      {
-        "label": "Methodology",
-        "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
-        ]
-      },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
-      {
-        "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
-      }
-    ]
-  },
-
-  {
-    "slug": "dns-config",
-    "title": "Demonstrating DNS Configuration in Microsoft Security",
-    "videoUrl": "",
-    "image": "/DNSConfig.png",
-    "tags": [
-      "Windows Security",
-      "Active Directory",
-      "User Management",
-      "Security Hardening"
-    ],
-    "year": 2024,
-    "objective": "The objective of this project was to configure Domain Name System (DNS) services in a Windows Server environment and validate name resolution functionality across a simulated enterprise network. This lab reinforces core skills needed to manage secure and resilient network infrastructure.",
+    "year": 2025,
+    "objective": "This demonstration walks through using Cyber Triage Lite Mode to load a compromised host and perform endpoint forensics and threat triage—identifying and validating malicious artifacts, auditing suspicious items, and producing a comprehensive incident report—while highlighting artifact analysis, false-positive validation, and rapid response.",
     "tools": [
-      "Windows Server 2019",
-      "DNS Manager",
-      "PowerShell",
-      "TDX Arena Lab"
-    ],
-    "steps": [
-      "Deployed and configured a DNS role on a Windows Server instance",
-      "Created forward and reverse lookup zones to support name resolution",
-      "Added DNS records (A, CNAME, PTR) manually and via DHCP dynamic updates",
-      "Verified propagation and tested functionality using PowerShell (Resolve-DnsName) and GUI tools",
-      "Diagnosed and fixed resolution failures due to misconfigured records"
+      "Cyber Triage Lite Mode",
+      "Windows Server",
+      "Windows Explorer",
+      "Incident Reporting Module"
     ],
     "concepts": [
-      "Ensured secure zone transfers to prevent unauthorized data replication",
-      "Implemented record validation and logging for auditing name resolution behavior",
-      "Demonstrated how DNS misconfigurations can lead to security issues like misrouting or DNS spoofing",
-      "Showed how Blue Teamers monitor and protect DNS infrastructure in Windows-based enterprise environments"
+      "Endpoint artifact analysis",
+      "False-positive validation",
+      "User privilege auditing",
+      "Suspicious task and port identification",
+      "Structured incident reporting"
     ],
-    "reflections": "This lab helped solidify my understanding of how DNS operates within a secured Microsoft domain and why maintaining correct and secure DNS settings is essential to ensuring uptime and protecting against spoofing or misdirection attacks. In a real SOC environment, misconfigured DNS is often the root of internal access issues and an entry point for attackers.",
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Launch Cyber Triage in Lite Mode, select an existing incident, and load the host system for analysis.",
+        "image": "/steps/endpoint/ep0.png"
+      },
+      {
+        "id": "step2",
+        "description": "Navigate to the Bad Items tab to examine confirmed threats, using the bottom pane to view file paths and details.",
+        "image": "/steps/endpoint/ep1.png"
+      },
+      {
+        "id": "step3",
+        "description": "Switch to the Suspicious Items tab and clear false positives by marking known Sysinternals or Nirsoft files as Good.",
+        "image": "/steps/endpoint/ep2.png"
+      },
+      {
+        "id": "step4",
+        "description": "Filter Suspicious Items to Type: File and review each flagged file’s reason, ignoring unknowns marked with question marks.",
+        "image": "/steps/endpoint/ep3.png"
+      },
+      {
+        "id": "step5",
+        "description": "Open the Files tab, use View File Explorer to locate malicious paths in TMP, and flag all suspicious files not already marked Bad.",
+        "image": "/steps/endpoint/ep4.png"
+      },
+      {
+        "id": "step6",
+        "description": "In the Accounts tab, audit user accounts, flagging any with unauthorized admin privileges while keeping trusted users as Good.",
+        "image": "/steps/endpoint/ep5.png"
+      },
+      {
+        "id": "step7",
+        "description": "Review the Triggered Tasks tab, flag entries with suspicious names or behaviors as Bad.",
+        "image": "/steps/endpoint/ep6.png"
+      },
+      {
+        "id": "step8",
+        "description": "Analyze the Ports tab for unusual open ports, marking those tied to questionable processes as malicious.",
+        "image": "/steps/endpoint/ep7.png"
+      },
+      {
+        "id": "step9",
+        "description": "Use the Search feature to find all instances of svchost.exe, filter by Type: File, and flag any outside system directories.",
+        "image": "/steps/endpoint/ep8.png"
+      },
+      {
+        "id": "step10",
+        "description": "Generate a final incident report summarizing all findings, flagged items, and decisions for documentation and review.",
+        "image": "/steps/endpoint/ep9.png"
+      }
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Established a structured triage workflow",
+        "description": "By loading the compromised host, working through “Bad Items” first, then “Suspicious Items,” and finally pivoting through files, accounts, tasks, and ports, I now follow a repeatable process that keeps me from missing critical evidence under pressure."
+      },
+      {
+        "id": "r2",
+        "title": "Audited user accounts and privileges for unauthorized access",
+        "description": "Spotting accounts with unexpected admin rights underscored the importance of least-privilege controls and taught me where attackers often gain a foothold."
+      },
+      {
+        "id": "r3",
+        "title": "Learned to distinguish real threats from noise",
+        "description": "Flagging only genuine malware artifacts while whitelisting legitimate tools (like Sysinternals utilities) sharpened my ability to focus on what’s truly malicious and avoid alert fatigue."
+      }
+    ],
     "resources": [
       {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "ct-1",
+        "href": "https://www.cybertriage.com/documentation",
         "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Cyber Triage Documentation",
+        "description": "Official guide to using Cyber Triage features and workflows."
       },
       {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "ct-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/incident-response/incident-response-steps/",
         "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "CrowdStrike Incident Response",
+        "description": "Comprehensive guide to the key stages of the incident response lifecycle."
+      },
+      {
+        "id": "ct-3",
+        "href": "https://www.guardrails.io/blog/false-positives-and-false-negatives-in-information-security/",
+        "icon": "/icons/icon4.png",
+        "title": "False Positives vs. False Negatives",
+        "description": "Deep dive into the causes and impacts of false positives and false negatives."
       }
     ],
     "sidebar": [
       {
         "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
+        "items": [{ "label": "Objective", "id": "objective" }]
       },
       {
         "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
       },
       {
         "label": "Methodology",
         "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
+          { "label": "Load Host Data", "id": "step1" },
+          { "label": "Review Bad Items", "id": "step2" },
+          { "label": "Validate Suspicious Items", "id": "step3" },
+          { "label": "Analyze Suspicious Files", "id": "step4" },
+          { "label": "Investigate Malicious Paths", "id": "step5" },
+          { "label": "Audit User Accounts", "id": "step6" },
+          { "label": "Investigate Triggered Tasks", "id": "step7" },
+          { "label": "Identify Suspicious Ports", "id": "step8" },
+          { "label": "Search svchost.exe", "id": "step9" },
+          { "label": "Generate Incident Report", "id": "step10" }
         ]
       },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
+
       {
         "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
+        "items": [{ "label": "Lessons Learned", "id": "reflections" }]
       }
     ]
   },
   {
-    "slug": "network-traffic",
-    "title": "Analyzing Network Traffic with Wireshark",
-    "videoUrl": "",
-    "image": "/BehanceTitle.png",
-    "tags": [
-      "Network Forensics",
-      "Packet Analysis",
-      "Wireshark",
-      "Intrusion Detection"
-    ],
-    "year": 2025,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
-    "resources": [
-      {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      }
-    ],
-    "sidebar": [
-      {
-        "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
-      },
-      {
-        "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
-      },
-      {
-        "label": "Methodology",
-        "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
-        ]
-      },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
-      {
-        "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "wireshark-analysis",
+    "slug": "wireshark-network-analysis",
     "title": "Exploring Network Analysis with Wireshark",
-    "videoUrl": "",
+    "statement": "In this video, I’ll demonstrate how to capture and dissect live network traffic with Wireshark",
+    "videoUrl": "https://www.youtube.com/embed/J2IH9GLX42w?si=2x2EjmwW2J6pDL6H",
     "image": "/WiresharkAnalysis.png",
     "tags": [
-      "Network Forensics",
+      "Network Analysis",
       "Wireshark",
-      "Packet Analysis",
-      "Intrusion Detection",
-      "TCP/IP"
-    ],
-    "year": 2024,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
-    "resources": [
-      {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      }
-    ],
-    "sidebar": [
-      {
-        "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
-      },
-      {
-        "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
-      },
-      {
-        "label": "Methodology",
-        "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
-        ]
-      },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
-      {
-        "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "access-control",
-    "title": "Implementing Access Control Lists in Linux",
-    "videoUrl": "",
-    "image": "/BehanceTitle.png",
-    "tags": [
-      "Windows Security",
-      "File Permissions",
-      "Access Control",
-      "System Hardening"
+      "Protocol Analysis",
+      "Traffic Filtering"
     ],
     "year": 2025,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
+    "objective": "This demonstration guides you through end-to-end network analysis with Wireshark—showcasing how to filter HTTP, DNS, and ICMP packets; adjust time formatting; inspect transport-layer encapsulation; and isolate host-specific communication—to uncover network behaviors and security insights.",
+    "tools": [
+      "Wireshark 3.x",
+      "Network Adapter (for live capture)",
+      "Packet Capture File (.pcap)",
+      "Display Filter Syntax",
+      "Command Prompt (for tshark)"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Apply the display filter \"http\" to isolate HTTP packets and examine web traffic.",
+        "image": "/steps/wireshark/w1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Change the time display format in Wireshark to 'Date and Time of Day' for clearer timestamp analysis.",
+        "image": "/steps/wireshark/w2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Use the filter \"dns\" to view only DNS query and response packets.",
+        "image": "/steps/wireshark/w3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Inspect the Layer 4 protocol field to determine whether TCP or UDP encapsulates the transport layer.",
+        "image": ""
+      },
+      {
+        "id": "step5",
+        "description": "Filter ICMP Echo Request packets with \"icmp\" to analyze Ping traffic.",
+        "image": "/steps/wireshark/w4.png"
+      },
+      {
+        "id": "step6",
+        "description": "Apply \"ip.dst == 8.8.8.8\" to focus on packets sent to the Google DNS server.",
+        "image": "/steps/wireshark/w5.png"
+      },
+      {
+        "id": "step7",
+        "description": "Combine filters (e.g., \"ip.dst == 8.8.8.8 && ip.src == [source IP]\") to view communications between a specific source and destination.",
+        "image": "/steps/wireshark/w6.png"
+      },
+      {
+        "id": "step8",
+        "description": "Locate HTTP POST requests by filtering HTTP traffic and identifying POST method packets.",
+        "image": "/steps/wireshark/w7.png"
+      }
+    ],
+    "concepts": [
+      "Display filtering for protocol-specific analysis",
+      "Timestamp formatting and readability",
+      "DNS traffic inspection",
+      "Layer 4 encapsulation (TCP vs. UDP)",
+      "ICMP and network reachability checks",
+      "Host-based packet filtering",
+      "HTTP method inspection (GET vs. POST)"
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": " Isolated DNS traffic to diagnose name resolution",
+        "description": "By filtering dns packets, I could watch queries and responses in real time—crucial for troubleshooting misconfigured zones or poisoned caches."
+      },
+      {
+        "id": "r2",
+        "title": "Differentiated TCP vs. UDP encapsulation",
+        "description": "Examining the protocol hierarchy showed me which services rely on reliable (TCP) vs. connectionless (UDP) transport, informing performance and security considerations."
+      },
+      {
+        "id": "r3",
+        "title": "Leveraged Wireshark’s statistics and protocol hierarchy",
+        "description": "Summarizing top talkers, packet counts, and protocol breakdowns turned raw captures into actionable insights about bandwidth usage and potential anomalies."
+      }
+    ],
     "resources": [
       {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "wireshark-1",
+        "href": "https://www.wireshark.org/docs/",
         "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Wireshark User’s Guide",
+        "description": "Comprehensive documentation on Wireshark features, filters, and best practices."
       },
       {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "wireshark-2",
+        "href": "https://medium.com/@nischal-s/wireshark-tutorial-992545708744",
         "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Wireshark Tutorial",
+        "description": "Step-by-step guide to capturing and analyzing packets with Wireshark."
       },
       {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "wireshark-3",
+        "href": "https://wiki.sans.blue/#!Packets.md",
         "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "SANS Packet Analysis Cheat Sheets",
+        "description": "Quick reference for common Wireshark filters and analysis workflows."
       }
     ],
     "sidebar": [
       {
         "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
       },
       {
         "label": "Methodology",
         "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
+          { "label": "Filter HTTP Packets", "id": "step1" },
+          { "label": "Change Time Format", "id": "step2" },
+          { "label": "Filter DNS Packets", "id": "step3" },
+          { "label": "Analyze Protocol Encapsulation", "id": "step4" },
+          { "label": "Filter Ping Packets", "id": "step5" },
+          { "label": "Filter to Specific Host", "id": "step6" },
+          { "label": "Combine Source/Dest Filters", "id": "step7" },
+          { "label": "Identify HTTP POST", "id": "step8" }
         ]
       },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
-      {
-        "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "acl-security",
-    "title": "Demonstrating Access Control Lists Implementation for Network Security",
-    "videoUrl": "",
-    "image": "/ACLNetworkSecurity.png",
-    "tags": [
-      "Network Security",
-      "ACLs",
-      "Traffic Filtering",
-      "Firewall Rules",
-      "Linux Networking"
-    ],
-    "year": 2024,
-    "objective": "",
-    "tools": [""],
-    "steps": [""],
-    "concepts": [""],
-    "reflections": "",
-    "resources": [
-      {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      }
-    ],
-    "sidebar": [
-      {
-        "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
-      },
-      {
-        "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
-      },
-      {
-        "label": "Methodology",
-        "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
-        ]
-      },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
-      {
-        "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
-      }
-    ]
-  },
 
+      {
+        "label": "Reflections",
+        "items": [{ "label": "Conclusion", "id": "reflections" }]
+      }
+    ]
+  },
   {
     "slug": "honypot-attack",
     "title": "Deploying and Testing a Secure SSH Honeypot",
+    "statement": "In this video, I’ll walk you through the deployment of a Cowrie SSH/Telnet honeypot",
     "videoUrl": "https://www.youtube.com/embed/F-adZW9ATMU?si=ua6asxtRRoUKpikr",
     "image": "/HoneypotAttack.png",
     "tags": [
@@ -529,7 +311,7 @@
       "Cyber Deception"
     ],
     "year": 2025,
-    "objective": "This virtual lab guided me through the deployment of a Cowrie-based SSH honeypot on an isolated Ubuntu Server instance. The goal was to attract unauthorized login attempts, record attacker behaviour, and extract actionable threat intelligence. All steps were performed in a controlled TDX Arena environment using dedicated virtual machines. The plan is to Validate that the target system hosts no unintended services prior to honeypot deployment. Establish a restricted user account for Cowrie to enforce isolation. Install and configure Cowrie in a Python virtual environment. Enable both SSH and Telnet deception to expand the honeypot’s attack surface. Simulate attacker reconnaissance with Nmap scans. Launch a brute-force SSH credential attack using Hydra. Verify successful deception by inspecting system hostname after login. Monitor and analyse Cowrie logs to extract attacker IPs and commands",
+    "objective": "This virtual lab walks through deploying a Cowrie-based SSH honeypot on an isolated Ubuntu Server—configuring the environment to attract unauthorized login attempts, simulating attacker reconnaissance and brute-force attacks, and analyzing the captured logs to record attacker behavior and extract actionable threat intelligence in a controlled setting.",
     "tools": [
       "Ubuntu Server 20.04 LTS",
       "Cowrie SSH/Telnet Honeypot",
@@ -539,422 +321,832 @@
       "Linux shell utilities (useradd, git, tail, less)"
     ],
     "steps": [
-      "Deployed and configured a DNS role on a Windows Server instance",
-      "Created forward and reverse lookup zones to support name resolution",
-      "Added DNS records (A, CNAME, PTR) manually and via DHCP dynamic updates",
-      "Verified propagation and tested functionality using PowerShell (Resolve-DnsName) and GUI tools",
-      "Diagnosed and fixed resolution failures due to misconfigured records"
+      {
+        "id": "step1",
+        "description": "Switch to PT-Station-01 and perform an initial full port scan to confirm no active services are running on the honeypot machine.",
+        "image": "/steps/honeypot/hp1.png"
+      },
+      {
+        "id": "step2",
+        "description": "On the honeypot station, create a dedicated user account “cowrie” to securely run the honeypot.",
+        "image": "/steps/honeypot/hp2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Clone the Cowrie repository from GitHub into the cowrie user’s home directory for setup.",
+        "image": "/steps/honeypot/hp3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Set up a Python virtual environment for Cowrie and install all required dependencies to isolate the honeypot application.",
+        "image": "/steps/honeypot/hp4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Modify Cowrie’s configuration to enable logging for both SSH and Telnet deception.",
+        "image": "/steps/honeypot/hp5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Start the Cowrie honeypot service to begin live capture of attacker interactions.",
+        "image": "/steps/honeypot/hp6.png"
+      },
+      {
+        "id": "step7",
+        "description": "Simulate an external reconnaissance scan from PT-Station-01 to discover open services on the honeypot.",
+        "image": "/steps/honeypot/hp7.png"
+      },
+      {
+        "id": "step8",
+        "description": "Launch a brute-force SSH attack simulation using Hydra against the honeypot.",
+        "image": "/steps/honeypot/hp8.png"
+      },
+      {
+        "id": "step9",
+        "description": "Simulate a successful unauthorized SSH login, then verify the system hostname to confirm access.",
+        "image": "/steps/honeypot/hp9.png"
+      },
+      {
+        "id": "step10",
+        "description": "Review and analyze Cowrie’s log files to monitor and interpret captured attacker commands and behaviour.",
+        "image": "/steps/honeypot/hp10.png"
+      }
     ],
     "concepts": [
-      "Deployment of an isolated deception environment",
-      "Secure user management and privilege restriction",
-      "Use of Python virtual environments for application isolation",
-      "Configuration of multi-protocol honeypot services",
-      "Network reconnaissance with Nmap",
-      "Brute-force attack simulation using Hydra",
-      "Forensic analysis of honeypot logs"
+      "Deception technology for proactive defense",
+      "Service isolation using virtual environments",
+      "SSH and Telnet honeypot configuration",
+      "Attack simulation and port scanning",
+      "Log-based threat intelligence extraction"
     ],
-    "reflections": "Honeypots act as a proactive defence mechanism by diverting malicious traffic away from production systems and generating real-world attack data. This lab demonstrated how a properly configured SSH honeypot can uncover attacker tactics, tools and procedures without elevating risk. The captured logs provide threat intelligence that can inform hardening strategies and intrusion detection rule sets.",
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Mastered environment isolation for safe deception",
+        "description": "Setting up Ubuntu in its own VM with a dedicated “cowrie” user and Python virtualenv taught me how to sandbox a honeypot so it can’t harm production systems."
+      },
+      {
+        "id": "r2",
+        "title": "Learned how to configure multi-protocol deception",
+        "description": "Enabling both SSH and Telnet services in Cowrie expanded my honeypot’s attack surface, showing me how to lure different kinds of attackers."
+      },
+      {
+        "id": "r3",
+        "title": "Captured and parsed attacker activity in real time",
+        "description": "Watching Cowrie’s live logs taught me how to extract IP addresses, usernames, and commands that attackers try—data I can feed into blocklists or SIEM alerts."
+      }
+    ],
     "resources": [
       {
         "id": "endpoint-1",
         "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
         "icon": "/icons/icon1.png",
         "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "description": "Overview of endpoint protection and honeypot use cases."
       },
       {
         "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "href": "https://docs.cowrie.org/",
         "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Cowrie Documentation",
+        "description": "Official Cowrie honeypot setup and configuration guide."
       },
       {
         "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "href": "https://www.sans.org/white-papers/36897/",
         "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "SANS DNS Security Whitepaper",
+        "description": "Deep dive into DNS-based and deception-based defense techniques."
       }
     ],
     "sidebar": [
       {
         "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Security Concepts", "id": "concepts" }]
       },
       {
         "label": "Methodology",
         "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
+          { "label": "Initial Port Scan", "id": "step1" },
+          { "label": "User Account Setup", "id": "step2" },
+          { "label": "Repository Clone", "id": "step3" },
+          { "label": "Virtual Env Setup", "id": "step4" },
+          { "label": "Configuration Tuning", "id": "step5" },
+          { "label": "Service Activation", "id": "step6" },
+          { "label": "Reconnaissance Simulation", "id": "step7" },
+          { "label": "Brute-Force Simulation", "id": "step8" },
+          { "label": "Login Verification", "id": "step9" },
+          { "label": "Log Analysis", "id": "step10" }
         ]
+      },
+
+      {
+        "label": "Reflections",
+        "items": [{ "label": "Lessons Learned", "id": "reflections" }]
+      }
+    ]
+  },
+  {
+    "slug": "dns-configuration-demo",
+    "title": "DNS Configuration Demo",
+    "statement": "In this video, I’ll walk you through the end-to-end process of configuring DNS on a Windows Server and a Windows Client",
+    "videoUrl": "https://www.youtube.com/embed/F-adZW9ATMU?si=ua6asxtRRoUKpikr",
+    "image": "/DNSConfig.png",
+    "tags": [
+      "DNS Security",
+      "Network Configuration",
+      "Windows Server",
+      "Cybersecurity"
+    ],
+    "year": 2025,
+    "objective": "In this demonstration, I set up a Windows Server–based DNS infrastructure and a Windows client to illustrate every step of secure name resolution. You’ll see how to install and configure the DNS role on Server 2019, establish forward and reverse lookup zones, and manually create both A and CNAME records pointing to a client’s IP address. On the client side, I’ll use ipconfig to discover its address and nslookup to confirm that each record resolves correctly.",
+    "tools": [
+      "Windows Server 2019",
+      "Windows 11 Client",
+      "Server Manager",
+      "DNS Manager",
+      "Command Prompt",
+      "PowerShell",
+      "ipconfig",
+      "nslookup"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Navigate to the Windows Client and run 'ipconfig' to obtain the client's IP address.",
+        "image": "/steps/dns/ObtainClientIP.png"
+      },
+      {
+        "id": "step2",
+        "description": "Open DNS Manager on the Windows Server and create a new A record linking the domain name to the client's IP address.",
+        "image": "/steps/dns/CreateARecord.png"
+      },
+      {
+        "id": "step3",
+        "description": "On the Windows Client, use 'nslookup' to verify that the A record resolves correctly to the intended IP address.",
+        "image": "/steps/dns/VerifyARecord.png"
+      },
+      {
+        "id": "step4",
+        "description": "In DNS Manager, create a CNAME record as an alias pointing to the existing A record's FQDN.",
+        "image": "/steps/dns/CNAMERecord.png"
+      },
+      {
+        "id": "step5",
+        "description": "Use 'nslookup' on the Windows Client to confirm that the CNAME alias resolves to the correct FQDN.",
+        "image": "/steps/dns/VerifyCNAME.png"
+      }
+    ],
+    "concepts": [
+      "Forward and reverse DNS lookup",
+      "A and CNAME record management",
+      "DNS resolution verification",
+      "Alias creation for flexible naming",
+      "Security considerations in DNS configuration"
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Practiced adding and managing record types",
+        "description": "By manually creating A records and CNAME aliases—and understanding when to use each—I now know how to structure a clean, maintainable DNS namespace."
+      },
+      {
+        "id": "r2",
+        "title": "Became proficient with DNS troubleshooting tools",
+        "description": "Using nslookup, PowerShell’s Resolve-DnsName, and the DNS Manager GUI, I learned to quickly verify record propagation, flush caches, and diagnose resolution failures."
+      },
+      {
+        "id": "r3",
+        "title": " Gained confidence diagnosing real-world issues",
+        "description": "Fixing misconfigured records—correcting typos in FQDNs, adjusting TTLs, and checking replication—taught me a systematic approach to resolve name-resolution problems under pressure."
+      }
+    ],
+    "resources": [
+      {
+        "id": "dns-1",
+        "href": "https://docs.microsoft.com/en-us/windows-server/networking/dns/get-started/what-s-new-in-dns-server",
+        "icon": "/icons/icon1.png",
+        "title": "Microsoft DNS Server Documentation",
+        "description": "Overview of DNS server features and configuration best practices."
+      },
+      {
+        "id": "dns-2",
+        "href": "https://aws.amazon.com/route53/what-is-dns/",
+        "icon": "/icons/icon2.png",
+        "title": "Introduction to DNS - AWS",
+        "description": "Introduction to DNS concepts and security considerations."
+      },
+      {
+        "id": "dns-3",
+        "href": "https://howdns.works/",
+        "icon": "/icons/icon3.png",
+        "title": "How DNS Works",
+        "description": "Deep dive into How DNS Works"
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [{ "label": "Objective", "id": "overview" }]
+      },
+      {
+        "label": "Tools",
+        "items": [{ "label": "Toolset", "id": "tools" }]
       },
       {
         "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
+      },
+      {
+        "label": "Methodology",
         "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
+          { "label": "Obtain Client IP", "id": "step1" },
+          { "label": "Create A Record", "id": "step2" },
+          { "label": "Verify A Record", "id": "step3" },
+          { "label": "Create CNAME Record", "id": "step4" },
+          { "label": "Verify CNAME Record", "id": "step5" }
         ]
       },
       {
         "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
+        "items": [{ "label": "Conclusion", "id": "reflections" }]
       }
     ]
   },
 
   {
-    "slug": "dns-demo",
-    "title": "Demonstrating DNS Configuration",
-    "videoUrl": "",
-    "image": "/DNSConfig.png",
+    "slug": "acl-implementation-network-security",
+    "title": "Demonstrating Access Control Lists Implementation for Network Security",
+    "statement": "In this video, I’ll guide you through implementing both standard and extended ACLs on network routers",
+    "videoUrl": "https://www.youtube.com/embed/F-adZW9ATMU?si=ua6asxtRRoUKpikr",
+    "image": "/ACLNetworkSecurity.png",
     "tags": [
-      "Network Configuration",
-      "Windows Server",
-      "Linux Networking",
-      "Name Resolution"
-    ],
-    "year": 2024,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
-    "resources": [
-      {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      },
-      {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
-        "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
-      }
-    ],
-    "sidebar": [
-      {
-        "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
-      },
-      {
-        "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
-      },
-      {
-        "label": "Methodology",
-        "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
-        ]
-      },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
-      {
-        "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "aws-iam",
-    "title": "Managing IAM Users and Permissions in AWS",
-    "videoUrl": "",
-    "image": "/AWSCloudIAM.png",
-    "tags": [
-      "Cloud Security",
-      "IAM",
-      "AWS",
-      "User Management",
+      "ACL",
+      "Network Security",
+      "Router Configuration",
       "Access Control"
     ],
     "year": 2025,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
+    "objective": "This demonstration shows how to configure standard and extended ACLs on Cisco routers to control traffic flow between Marketing, Management, and R&D segments—creating rules to restrict and permit desired communication, applying them to the correct interfaces, and verifying both successful and denied connectivity to enforce secure network segmentation.",
+    "tools": [
+      "Cisco IOS Router",
+      "Packet Tracer or GNS3",
+      "PC Clients (Marketing, Management, R&D, Server Farm)",
+      "Console Cable or SSH",
+      "Router CLI"
+    ],
+    "concepts": [
+      "Standard vs. extended ACLs",
+      "Numbered and named ACL syntax",
+      "Inbound and outbound ACL application",
+      "Traffic filtering by network, host, protocol",
+      "ACL processing order and implicit deny"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "On Router2 (R2), enter global configuration mode and create standard ACL 1 to deny Marketing network access to the Server Farm and permit all other traffic.",
+        "image": "/steps/acl/acl1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Apply ACL 1 outbound on R2’s GigabitEthernet0/0 interface to enforce the rule toward the Server Farm.",
+        "image": "/steps/acl/acl2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Test connectivity: ping Server1 from Marketing PC (should fail) and from Management PC (should succeed), explaining the ACL behavior.",
+        "image": "/steps/acl/acl3.png"
+      },
+      {
+        "id": "step4",
+        "description": "On Router1 (R1), create named standard ACL BLOCK_HOST to deny traffic from specific hosts while allowing all others.",
+        "image": "/steps/acl/acl4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Apply BLOCK_HOST outbound on R1’s GigabitEthernet0/0 interface to enforce host-based access control.",
+        "image": "/steps/acl/acl5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Verify connectivity: test PC3 (Management) to PC1 (R&D) which should fail due to the ACL.",
+        "image": "/steps/acl/acl6.png"
+      },
+      {
+        "id": "step7",
+        "description": "Verify connectivity: test PC4 to PC2 which should succeed.",
+        "image": "/steps/acl/acl7.png"
+      },
+      {
+        "id": "step8",
+        "description": "Back on R2, create extended ACL 100 in global config to filter traffic by source and destination IP addresses.",
+        "image": "/steps/acl/acl8.png"
+      },
+      {
+        "id": "step9",
+        "description": "Apply extended ACL 100 inbound on R2’s GigabitEthernet0/1 interface to enforce the extended rules.",
+        "image": "/steps/acl/acl9.png"
+      },
+      {
+        "id": "step10",
+        "description": "Validate connectivity: test R&D PC2 to Marketing PC6 (should fail), explaining the ACL effects.",
+        "image": "/steps/acl/acl10.png"
+      },
+      {
+        "id": "step11",
+        "description": "Validate connectivity: test R&D PC2 to Marketing PC5 (should succeed), explaining the ACL effects.",
+        "image": "/steps/acl/acl11.png"
+      }
+    ],
+
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Understood how ACLs integrate into broader security design",
+        "description": "Combining ACLs with proper IP addressing, subnet planning, and device hardening highlighted how layered defenses work together to protect the network."
+      },
+      {
+        "id": "r2",
+        "title": "Reinforced network segmentation best practices",
+        "description": "By restricting cross‐segment traffic through ACLs, I appreciated how edge filtering enforces least‐privilege connectivity and reduces attack surface."
+      },
+      {
+        "id": "r3",
+        "title": "Learned the importance of ACL placement and direction",
+        "description": "Applying a standard ACL outbound on R2’s G0/0 vs. an extended ACL inbound on G0/1 reinforced that where and how you bind an ACL is just as critical as the rules themselves."
+      }
+    ],
     "resources": [
       {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "acl-1",
+        "href": "https://www.cisco.com/c/en/us/td/docs/ios-xml/ios/sec_conn_acl/configuration/15-mt/sec-conn-acl-15-mt-book.html",
         "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Cisco ACL Configuration Guide",
+        "description": "Official Cisco documentation on configuring standard and extended ACLs."
       },
       {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "acl-2",
+        "href": "https://networklessons.com/cisco/ccna-routing-and-switching/standard-and-extended-acl/",
         "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "NetworkLessons ACL Tutorial",
+        "description": "In-depth tutorial on ACL types and configuration examples."
       },
       {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "acl-3",
+        "href": "https://www.sans.org/white-papers/380/",
         "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "SANS ACL Cheat Sheet",
+        "description": "Quick reference for ACL commands and best practices."
       }
     ],
     "sidebar": [
       {
         "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
       },
       {
         "label": "Methodology",
         "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
+          { "label": "Create Standard ACL on R2", "id": "step1" },
+          { "label": "Apply ACL on R2 Interface", "id": "step2" },
+          { "label": "Verify Connectivity on R2", "id": "step3" },
+          { "label": "Create Standard ACL on R1", "id": "step4" },
+          { "label": "Apply ACL on R1 Interface", "id": "step5" },
+          { "label": "Verify Connectivity from PC3 to PC1", "id": "step6" },
+          { "label": "Verify Connectivity from PC4 to PC2", "id": "step7" },
+          { "label": "Create Extended ACL on R2", "id": "step8" },
+          { "label": "Apply Extended ACL on R2 Interface", "id": "step9" },
+          { "label": "Validate Connectivity from PC2 to PC6", "id": "step10" },
+          { "label": "Validate Connectivity from PC2 to PC5", "id": "step11" }
         ]
       },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
+
       {
         "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
+        "items": [{ "label": "Conclusion", "id": "reflections" }]
       }
     ]
   },
   {
-    "slug": "custom-vpc",
-    "title": "Deploying a VPC with Subnets, Routing, and a Web Server in AWS",
-    "videoUrl": "",
+    "slug": "aws-iam-management",
+    "title": "Managing IAM Users and Permissions in AWS",
+    "statement": "In this video, I’ll walk you through the end-to-end process of configuring DNS on a Windows Server and a Windows Client",
+    "videoUrl": "https://www.youtube.com/embed/DE76M5S2M5Q?si=L2RPXCFRKxgt5xGp",
+    "image": "/AWSCloudIAM.png",
+    "tags": ["AWS", "IAM", "Access Control", "Cloud Security"],
+    "year": 2025,
+    "objective": "This demonstration shows how to manage IAM users, groups, and permissions in AWS using the IAM console to implement role-based access control and least-privilege best practices—inspecting existing users and groups, assigning users to role-based groups, attaching and reviewing policies, and testing effective access to enforce secure permissions.",
+    "tools": ["AWS Management Console", "IAM Console", "Web Browser"],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Open the AWS IAM console and inspect existing users (user-1, user-2, user-3) and groups (EC2-Admin, EC2-Support, S3-Support).",
+        "image": "/steps/iam/iam1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Select user-1 and review permissions, group membership, and credentials (access keys, console password).",
+        "image": "/steps/iam/iam2.png"
+      },
+      {
+        "id": "step3",
+        "description": "View the list of user groups and examine attached managed and inline policies for each.",
+        "image": "/steps/iam/iam3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Add user-1 to the S3-Support group using the “Add to group” action.",
+        "image": "/steps/iam/iam4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Add user-2 to the EC2-Support group and user-3 to the EC2-Admin group.",
+        "image": "/steps/iam/iam5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Verify updated group memberships by checking the user counts and group lists for each user.",
+        "image": "/steps/iam/iam6.png"
+      },
+      {
+        "id": "step7",
+        "description": "Sign in as user-1 and confirm S3 access succeeds and EC2 access is denied.",
+        "image": "/steps/iam/iam7.png"
+      },
+      {
+        "id": "step8",
+        "description": "Sign in as user-2 to verify EC2 view permissions, ensure stopping instances is denied, and confirm no S3 access.",
+        "image": "/steps/iam/iam8.png"
+      },
+      {
+        "id": "step9",
+        "description": "Sign in as user-3 to demonstrate full EC2 management (including stop/start instances) and verify S3 access is restricted.",
+        "image": "/steps/iam/iam9.png"
+      }
+    ],
+    "concepts": [
+      "Role-based access control in IAM",
+      "Managed vs. inline policies",
+      "User group membership and inheritance",
+      "Least-privilege principle",
+      "Testing identity permissions via console sign-in"
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Deepened my understanding of role-based access control",
+        "description": "By creating and managing IAM groups (EC2-Admin, EC2-Support, S3-Support) and adding users to them, I saw firsthand how grouping simplifies permission management at scale."
+      },
+      {
+        "id": "r2",
+        "title": "Practiced the principle of least-privilege",
+        "description": "Assigning users only the permissions they needed—and then testing their access—reinforced how to mitigate risk by avoiding over-privileged identities."
+      },
+      {
+        "id": "r3",
+        "title": "Reinforced AWS best practices",
+        "description": "From rotating access keys to avoiding root account usage, this lab underscored the operational discipline needed for secure identity and access management in AWS."
+      }
+    ],
+    "resources": [
+      {
+        "id": "iam-1",
+        "href": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
+        "icon": "/icons/icon1.png",
+        "title": "AWS IAM User Guide",
+        "description": "Official documentation for AWS Identity and Access Management."
+      },
+      {
+        "id": "iam-2",
+        "href": "https://aws.amazon.com/iam/faqs/",
+        "icon": "/icons/icon2.png",
+        "title": "AWS IAM FAQs",
+        "description": "Frequently asked questions on IAM concepts and best practices."
+      },
+      {
+        "id": "iam-3",
+        "href": "https://aws.amazon.com/blogs/security/aws-iam-best-practices/",
+        "icon": "/icons/icon3.png",
+        "title": "AWS IAM Best Practices",
+        "description": "AWS blog post detailing recommended practices for secure IAM management."
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [{ "label": "Objective", "id": "overview" }]
+      },
+      {
+        "label": "Tools",
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Inspect Existing Users & Groups", "id": "step1" },
+          { "label": "Review User-1 Details", "id": "step2" },
+          { "label": "Examine Group Policies", "id": "step3" },
+          { "label": "Assign Users to Groups", "id": "step4" },
+          { "label": "Assign user-2 & user-3 to Groups", "id": "step5" },
+          { "label": "Verify Group Memberships", "id": "step6" },
+          { "label": "Test Permissions for User-1", "id": "step7" },
+          { "label": "Test Permissions for User-2", "id": "step8" },
+          { "label": "Test Permissions for User-3", "id": "step9" }
+        ]
+      },
+
+      {
+        "label": "Reflections",
+        "items": [{ "label": "Conclusion", "id": "reflections" }]
+      }
+    ]
+  },
+  {
+    "slug": "vpc-subnets-routing-webserver",
+    "title": "Deploying a Custom VPC in AWS",
+    "statement": "In this video, I’ll walk you through the end-to-end setup of a custom AWS VPC",
+    "videoUrl": "https://www.youtube.com/embed/CW_-EN5D3ps?si=Y4jPPX_DVdA409od",
     "image": "/CustomVPC.png",
-    "tags": [
-      "Cloud Networking",
-      "AWS",
-      "VPC",
-      "Subnets",
-      "Routing",
-      "Web Server"
-    ],
+    "tags": ["AWS VPC", "Subnetting", "Cloud Networking", "EC2"],
     "year": 2025,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
+    "objective": "This demonstration walks through creating a custom VPC with public and private subnets across two Availability Zones, provisioning Internet and NAT Gateways, updating route table associations, configuring a web security group, and launching an EC2 instance with user-data to deploy a functional web server.",
+    "tools": [
+      "AWS Management Console",
+      "VPC Console",
+      "EC2 Console",
+      "Amazon Linux 2023 AMI",
+      "Security Groups",
+      "Route Tables"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Open the VPC console in us-east-1 and create a VPC named 'lab' with CIDR 10.0.0.0/16, including one public (10.0.0.0/24) and one private subnet (10.0.1.0/24), enabling DNS resolution and hostnames.",
+        "image": "/steps/vpc/vpc1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Add a second public subnet 'lab-subnet-public2' (10.0.2.0/24) and private subnet 'lab-subnet-private2' (10.0.3.0/24) in us-east-1b for high availability.",
+        "image": "/steps/vpc/vpc2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Update route table associations: attach both private subnets to lab-rtb-private1-us-east-1a (routes to NAT Gateway) and both public subnets to lab-rtb-public (routes to Internet Gateway).",
+        "image": "/steps/vpc/vpc3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Create a security group 'Web Security Group' in the lab VPC permitting inbound HTTP from Anywhere-IPv4.",
+        "image": "/steps/vpc/vpc4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Launch an EC2 instance named 'Web Server 1' (t2.micro, Amazon Linux 2023) in lab-subnet-public2 with auto-assigned public IP, attach 'Web Security Group', and paste the user-data script to install and start the web application.",
+        "image": "/steps/vpc/vpc5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Verify the EC2 status checks pass and is running.",
+        "image": "/steps/vpc/vpc6.png"
+      }
+    ],
+    "concepts": [
+      "Custom VPC design",
+      "Multi-AZ subnet distribution",
+      "NAT and Internet Gateway configuration",
+      "Route table management",
+      "Security group firewall rules",
+      "EC2 user-data provisioning"
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Learned to provision Internet and NAT Gateways",
+        "description": "Attaching an Internet Gateway to my VPC and placing a NAT Gateway in a public subnet taught me how to enable outbound internet access for private resources while keeping them unreachable from the internet directly."
+      },
+      {
+        "id": "r2",
+        "title": "Implemented VPC design fundamentals",
+        "description": "Planning a 10.0.0.0/16 CIDR block and carving out public (/24) and private (/24) subnets across two Availability Zones reinforced how to architect for high availability and fault tolerance."
+      },
+      {
+        "id": "r3",
+        "title": "Gained proficiency in the AWS Console",
+        "description": "Navigating the VPC, Subnets, Gateways, Route Tables, Security Groups, and EC2 dashboards in sequence boosted my operational fluency for real-world AWS networking tasks."
+      }
+    ],
     "resources": [
       {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "vpc-1",
+        "href": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
         "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Amazon VPC User Guide",
+        "description": "Official AWS documentation on Virtual Private Cloud concepts and setup."
       },
       {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "ec2-1",
+        "href": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EC2_GetStarted.html",
         "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "EC2 Getting Started Guide",
+        "description": "Step-by-step instructions for launching and configuring EC2 instances."
       },
       {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "vpc-2",
+        "href": "https://aws.amazon.com/architecture/vpc-best-practices/",
         "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "VPC Best Practices",
+        "description": "AWS whitepaper detailing design patterns and recommendations for VPC deployments."
       }
     ],
     "sidebar": [
       {
         "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
       },
       {
         "label": "Methodology",
         "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
+          { "label": "Create Custom VPC", "id": "step1" },
+          { "label": "Add AZ-2 Subnets", "id": "step2" },
+          { "label": "Update Route Tables", "id": "step3" },
+          { "label": "Create Security Group", "id": "step4" },
+          { "label": "Launch EC2 Web Server", "id": "step5" },
+          { "label": "Verify Web Server", "id": "step6" }
         ]
       },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
+
       {
         "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
+        "items": [{ "label": "Conclusion", "id": "reflections" }]
       }
     ]
   },
   {
-    "slug": "load-balancing",
-    "title": "Scale and Load Balance Your Architecture in AWS",
-    "videoUrl": "",
+    "slug": "scale-load-balance-architecture",
+    "title": "Scale and Load Balance an Architecture in AWS",
+    "statement": "In this video, I’ll walk you through the process of scaling and load-balancing your AWS architecture",
+    "videoUrl": "https://www.youtube.com/embed/e3lXDrGOM0U?si=OmXZLl-KndznhvzP",
     "image": "/LoadBalancing.png",
-    "tags": [
-      "Cloud Architecture",
-      "Auto Scaling",
-      "Load Balancing",
-      "AWS",
-      "High Availability"
-    ],
+    "tags": ["Auto Scaling", "Load Balancing", "AWS", "Cloud Architecture"],
     "year": 2025,
-    "objective": "",
-    "tools": [],
-    "steps": [],
-    "concepts": [],
-    "reflections": "",
+    "objective": "This lab guides you through creating an AMI from an existing EC2 instance, configuring an Application Load Balancer and target group, setting up a Launch Template and Auto Scaling Group, verifying health checks and dynamic scaling via CloudWatch, and cleaning up resources to build and maintain a resilient, highly available AWS infrastructure.",
+    "tools": [
+      "AWS Management Console",
+      "EC2 Console",
+      "Elastic Load Balancing (ALB)",
+      "Auto Scaling Groups",
+      "CloudWatch",
+      "Launch Templates"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Create an AMI from the running EC2 instance Web Server 1 by selecting Actions > Image and templates > Create image, naming it WebServerAMI.",
+        "image": "/steps/lb/lb1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Under EC2 > Target Groups, create a target group named LabGroup in the Lab VPC and then configure an Application Load Balancer named LabELB in public subnets with HTTP listener forwarding to LabGroup.",
+        "image": "/steps/lb/lb2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Under EC2 > Target Groups, create a target group named LabGroup in the Lab VPC and then configure an Application Load Balancer named LabELB in public subnets with HTTP listener forwarding to LabGroup.",
+        "image": "/steps/lb/lb3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Create a Launch Template named LabConfig using the WebServerAMI, t2.micro instance type, key pair vockey, Web Security Group, and enable detailed CloudWatch monitoring.",
+        "image": "/steps/lb/lb4.png"
+      },
+      {
+        "id": "step5",
+        "description": "From the Launch Templates page, launch an Auto Scaling Group named Lab Auto Scaling Group in the Lab VPC’s private subnets, attach it to LabGroup, set desired/min/max capacity to 2/2/6, and add a CPU utilization–based scaling policy named LabScalingPolicy targeting 60%.",
+        "image": "/steps/lb/lb5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Verify load balancing by confirming two Lab Instance VMs appear in EC2, both are healthy under LabGroup targets, and by loading the LabELB DNS in a browser to see the application.",
+        "image": ""
+      },
+      {
+        "id": "step7",
+        "description": "Simulate high load via the application’s Load Test button, monitor CloudWatch alarms (AlarmHigh/AlarmLow), and observe Auto Scaling launching additional instances in response.",
+        "image": "/steps/lb/lb6.png"
+      },
+      {
+        "id": "step8",
+        "description": "Terminate the original Web Server 1 instance from EC2 > Instance State once Auto Scaling instances are healthy.",
+        "image": ""
+      }
+    ],
+    "concepts": [
+      "Amazon Machine Image (AMI) creation",
+      "Application Load Balancer and target groups",
+      "Launch Templates for EC2 provisioning",
+      "Auto Scaling Group configuration and scaling policies",
+      "CloudWatch metrics and alarms",
+      "Resource cleanup best practices"
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Automated provisioning with Launch Templates and Auto Scaling Groups",
+        "description": "Defining a Launch Template and setting desired/min/max capacities in an ASG reinforced how to spin up and tear down instances without manual intervention."
+      },
+      {
+        "id": "r2",
+        "title": "Leveraged CloudWatch for dynamic scaling",
+        "description": "Creating CPU-utilization alarms and tying them to scaling policies demonstrated how AWS can react in real time to changing load."
+      },
+      {
+        "id": "r3",
+        "title": "Deepened my understanding of AWS networking and security",
+        "description": "Associating security groups with the load balancer and instances highlighted how to protect public endpoints while still allowing legitimate traffic."
+      }
+    ],
     "resources": [
       {
-        "id": "endpoint-1",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "alb-1",
+        "href": "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html",
         "icon": "/icons/icon1.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Application Load Balancer Guide",
+        "description": "AWS documentation for configuring and managing ALBs."
       },
       {
-        "id": "endpoint-2",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "asg-1",
+        "href": "https://docs.aws.amazon.com/autoscaling/ec2/userguide/what-is-amazon-ec2-auto-scaling.html",
         "icon": "/icons/icon2.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Auto Scaling User Guide",
+        "description": "Official guide to Auto Scaling Groups, policies, and launch configurations."
       },
       {
-        "id": "endpoint-3",
-        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/exposure-management/honeypots/",
+        "id": "cw-1",
+        "href": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
         "icon": "/icons/icon3.png",
-        "title": "Endpoint Security",
-        "description": "Endpoint Security"
+        "title": "Amazon CloudWatch Overview",
+        "description": "Introduction to CloudWatch metrics, alarms, and dashboards."
       }
     ],
     "sidebar": [
       {
         "label": "Overview",
-        "items": [
-          { "label": "Project Objective", "id": "objective" },
-          { "label": "Lab Goal", "id": "lab" }
-        ]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
-        "items": [
-          { "label": "Toolset", "id": "toolset" },
-          { "label": "Enviornment", "id": "enviornment" },
-          { "label": "Technology Stack", "id": "stack" }
-        ]
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
       },
       {
         "label": "Methodology",
         "items": [
-          { "label": "Enviornment Preperation", "id": "enviornment" },
-          { "label": "Cowrie Setup", "id": "setup" },
-          { "label": "Configuration Tuning", "id": "config" },
-          { "label": "Service Activation", "id": "activation" },
-          { "label": "Attack Simulation", "id": "attack" },
-          { "label": "Log Analysis", "id": "analysis" }
+          { "label": "Create AMI", "id": "step1" },
+          { "label": "Create a Target Group", "id": "step2" },
+          { "label": "Configure Load Balancer", "id": "step3" },
+          { "label": "Setup Launch Template & ASG", "id": "step4" },
+          { "label": "Verify Load Balancing", "id": "step5" },
+          { "label": "Test Auto Scaling", "id": "step6" },
+          { "label": "Terminate Original Instance", "id": "step7" },
+          { "label": "Clean Up Resources", "id": "step8" }
         ]
       },
-      {
-        "label": "Concepts",
-        "items": [
-          { "label": "Security Concepts", "id": "concept" },
-          { "label": "Key Principles", "id": "principles" }
-        ]
-      },
+
       {
         "label": "Reflections",
-        "items": [
-          { "label": "Lessons Learned", "id": "lessons" },
-          { "label": "Key Takeaways", "id": "takeaways" }
-        ]
+        "items": [{ "label": "Conclusion", "id": "reflections" }]
       }
     ]
   }

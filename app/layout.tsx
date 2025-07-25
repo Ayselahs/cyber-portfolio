@@ -3,8 +3,9 @@ import "./globals.css";
 import { inter } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Next.js + MongoDB",
-  description: "Use MongoDB with Next.js",
+  title: "CyberSecurity Portfolio",
+  description:
+    "A showcase of hands-on cybersecurity projects focused on threat detection, system hardening, and network defense.",
 };
 
 export default function RootLayout({
@@ -14,6 +15,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} dark`}>
+      <head>
+        <script
+          src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+          async
+          defer
+        ></script>
+      </head>
       <body>{children}</body>
     </html>
   );

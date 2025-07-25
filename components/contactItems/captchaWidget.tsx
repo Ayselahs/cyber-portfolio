@@ -27,7 +27,9 @@ export function CaptchWidget({
 
     window.grecaptcha.ready(() => {
       window
-        .grecaptcha!.execute(process.env.RECAPTCHA_SITE_KEY!, { action })
+        .grecaptcha!.execute(process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!, {
+          action,
+        })
         .then(onVerify)
         .catch((err) => {
           console.error("reCaptcha failed", err);

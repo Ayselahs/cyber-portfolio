@@ -26,9 +26,23 @@ export default function HeroSection() {
           particularly interested in opportunities that <br /> allow me to
           contribute to innovative solutions and enhance user experiences.
         </p>
-        <button className="bg-teal-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-teal-700 transition">
-          {`Let's Connect`}
-        </button>
+        <div>
+          <a
+            href="/contact"
+            className="inline-block bg-teal-600 text-white px-6 py-3 rounded-full shadow-lg hover:bg-teal-700 transition mr-4 "
+          >
+            Let&apos;s Connect
+          </a>
+
+          <a
+            href="/Smith_Security_Resume.pdf"
+            download
+            className="inline-block bg-white text-teal-600 px-6 py-3 rounded-full shadow-lg hover:bg-gray-200 transition"
+            aria-label="Download Resume"
+          >
+            Download Resume
+          </a>
+        </div>
       </div>
       <RightSide />
     </section>
