@@ -44,7 +44,9 @@ export default function HeroSection() {
           </a>
         </div>
       </div>
-      <RightSide />
+      <div className="hidden md:block md:w-1/2">
+        <RightSide />
+      </div>
     </section>
   );
 }
