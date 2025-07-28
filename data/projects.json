@@ -1,5 +1,189 @@
 [
   {
+    "slug": "phishing-analysis-chal",
+    "title": "Malicious Phishing Analysis",
+    "statement": "This demonstration walks through analyzing a quarantined phishing email—parsing headers, extracting and hashing the attachment, consulting threat intelligence, and making a release decision.",
+    "videoUrl": "https://www.youtube.com/embed/lC_ds2tnQ8Y?si=vrzoE-cKvFlcyhns",
+    "image": "/PhishingChall.png",
+    "tags": [
+      "Phishing Analysis",
+      "Email Forensics",
+      "Incident Response",
+      "SOC"
+    ],
+    "year": 2025,
+    "objective": "Guide a SOC analyst through header inspection, attachment extraction, hash-based threat lookup, and static macro analysis to determine whether to release or block a suspicious email.",
+    "tools": [
+      "Thunderbird Email Gateway",
+      "emldump.py",
+      "oledump.py",
+      "Whoisdomain",
+      "VirusTotal",
+      "CyberChef",
+      "Office VBA Editor",
+      "Hashing Utility (OpenSSL)"
+    ],
+    "concepts": [
+      "Email header forensics",
+      "Attachment extraction",
+      "Hash-based threat intelligence",
+      "Static VBA macro analysis",
+      "Release decision workflow"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Read the email header to determine the full delivery date and time: Tue, 14 May 2024 23:31:08 +0000.",
+        "image": "/steps/phishing/p1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Identify the email subject line: \"You're Invited!\".",
+        "image": "/steps/phishing/p2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Note the recipient address as emily.nguyen@glbllogistics.co.",
+        "image": "/steps/phishing/p3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Verify the sender’s display name claims to be Adam Barry.",
+        "image": "/steps/phishing/p4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Extract the sender’s actual email address: abarry@live.com.",
+        "image": "/steps/phishing/p5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Determine the sending infrastructure provider from the header (Outlook.com / Microsoft).",
+        "image": "/steps/phishing/p6.png"
+      },
+      {
+        "id": "step7",
+        "description": "Locate the Message-ID value: <SA1PR14MB737384979FDD1178FD956584C1E32@SA1PR14MB7373.namprd14.prod.outlook.com>.",
+        "image": "/steps/phishing/p7.png"
+      },
+      {
+        "id": "step8",
+        "description": "Run emldump.py against the raw email and identify which index contains the attachment (index 5).",
+        "image": "/steps/phishing/p8.png"
+      },
+      {
+        "id": "step9",
+        "description": "Extract the attachment filename: AR_Wedding_RSVP.docm.",
+        "image": "/steps/phishing/p9.png"
+      },
+      {
+        "id": "step10",
+        "description": "Compute the SHA-256 hash of the attachment using a hashing utility.",
+        "image": "/steps/phishing/p10.png"
+      },
+      {
+        "id": "step11",
+        "description": "Submit the hash to VirusTotal and record the Popular Threat Label: downloader autdwnlrner/w97m.",
+        "image": "/steps/phishing/p11.png"
+      },
+      {
+        "id": "step12",
+        "description": "Decide whether to release or block the email. (Decision: Block)"
+      },
+      {
+        "id": "step13",
+        "description": "Bonus: Open the .docm in the VBA editor, locate the download URL, and present it in defanged format: hxxp[:]//malicious.example.com/payload.exe.",
+        "image": "/steps/phishing/p13.png"
+      }
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Enhanced header analysis skills",
+        "description": "Parsing complex headers taught me to extract provenance, timing, and routing details critical for email forensics."
+      },
+      {
+        "id": "r2",
+        "title": "Attachment triage expertise",
+        "description": "Using emldump and hashing utilities to isolate and fingerprint malicious attachments streamlined my threat identification process."
+      },
+      {
+        "id": "r3",
+        "title": "Threat intelligence integration",
+        "description": "Consulting VirusTotal for reputation data reinforced how hash-based lookups help prioritize incident response actions."
+      },
+      {
+        "id": "r4",
+        "title": "Static macro analysis practice",
+        "description": "Inspecting the VBA code and defanging URLs improved my ability to safely uncover embedded payload delivery mechanisms."
+      },
+      {
+        "id": "r5",
+        "title": "Informed release decision-making",
+        "description": "Balancing header, attachment, and intelligence findings taught me to confidently decide when an email is safe or requires blocking."
+      }
+    ],
+    "resources": [
+      {
+        "id": "phish-1",
+        "href": "https://www.sans.org/white-papers/381",
+        "icon": "/icons/icon1.png",
+        "title": "SANS Incident Response Cheat Sheet",
+        "description": "Quick reference for endpoint triage and threat hunting steps."
+      },
+      {
+        "id": "phish-2",
+        "href": "https://www.crowdstrike.com/en-us/cybersecurity-101/incident-response/incident-response-steps/",
+        "icon": "/icons/icon2.png",
+        "title": "CrowdStrike Incident Response",
+        "description": "Comprehensive guide to the key stages of the incident response lifecycle."
+      },
+      {
+        "id": "phish-3",
+        "href": "https://www.guardrails.io/blog/false-positives-and-false-negatives-in-information-security/",
+        "icon": "/icons/icon3.png",
+        "title": "False Positives vs. False Negatives",
+        "description": "Deep dive into the causes and impacts of false positives and false negatives."
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [{ "label": "Objective", "id": "objective" }]
+      },
+      {
+        "label": "Tools",
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Parse Header", "id": "step1" },
+          { "label": "Identify Subject", "id": "step2" },
+          { "label": "Find Recipient", "id": "step3" },
+          { "label": "Verify Display Name", "id": "step4" },
+          { "label": "Extract Sender Address", "id": "step5" },
+          { "label": "Determine Infrastructure", "id": "step6" },
+          { "label": "Locate Message ID", "id": "step7" },
+          { "label": "Run emldump", "id": "step8" },
+          { "label": "Extract Filename", "id": "step9" },
+          { "label": "Compute SHA-256", "id": "step10" },
+          { "label": "VirusTotal Lookup", "id": "step11" },
+          { "label": "Decision", "id": "step12" },
+          { "label": "Macro Analysis", "id": "step13" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [{ "label": "Lessons Learned", "id": "reflections" }]
+      }
+    ]
+  },
+  {
     "slug": "endpoint-forensics-triage",
     "title": "Endpoint Forensics and Threat Triage Using Cyber Triage",
     "statement": "In this video, I’ll walk you through the process of performing endpoint forensics and threat triage with Cyber Triage",
