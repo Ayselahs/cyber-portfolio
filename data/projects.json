@@ -149,7 +149,7 @@
     "sidebar": [
       {
         "label": "Overview",
-        "items": [{ "label": "Objective", "id": "objective" }]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
@@ -305,7 +305,7 @@
     "sidebar": [
       {
         "label": "Overview",
-        "items": [{ "label": "Objective", "id": "objective" }]
+        "items": [{ "label": "Objective", "id": "overview" }]
       },
       {
         "label": "Tools",
