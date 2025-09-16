@@ -184,6 +184,350 @@
     ]
   },
   {
+    "slug": "ad-ds-setup",
+    "title": "Active Directory Domain Services Setup",
+    "statement": "In this video, I’ll walk you through the end-to-end deployment and administration of Active Directory Domain Services ",
+    "videoUrl": "https://www.youtube.com/embed/zwvLVub7lCo?si=kH0xx956Ibxpnmme",
+    "image": "/ActiveDir.png",
+    "tags": [
+      "Active Directory",
+      "Windows Server",
+      "Group Policy",
+      "Server Manager"
+    ],
+    "year": 2025,
+    "objective": "Demonstrate the full lifecycle of deploying and administering an Active Directory domain—covering Domain Controller setup, user and group management, workstation joins, OU/GPO design, and account recovery.",
+    "tools": [
+      "Windows Server 2022",
+      "Windows 10 Client",
+      "Active Directory Users and Computers (ADUC)",
+      "Group Policy Management Console (GPMC)",
+      "Server Manager"
+    ],
+    "concepts": [
+      "AD DS role installation & promotion",
+      "Domain user & group provisioning",
+      "Workstation domain joins",
+      "Organizational Unit (OU) hierarchy",
+      "Group Policy Object (GPO) enforcement",
+      "Password reset & account lifecycle"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Install the AD DS role via Server Manager and configure DNS settings.",
+        "image": "/steps/ad/ad1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Promote the Windows Server 2022 VM to be the Domain Controller for the new domain.",
+        "image": ""
+      },
+      {
+        "id": "step3",
+        "description": "Open ADUC and create new domain users—assign initial passwords and enforce password policies.",
+        "image": "/steps/ad/ad3.png"
+      },
+      {
+        "id": "step4",
+        "description": "On a Windows 10 VM, join the machine to the new AD domain and verify it appears in ADUC.",
+        "image": "/steps/ad/ad4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Build an OU structure for Users and Computers, and create security groups for department-level access.",
+        "image": "/steps/ad/ad5.png"
+      },
+      {
+        "id": "step6",
+        "description": "In GPMC, create and link GPOs to OUs—configure password length, lockout settings, and desktop restrictions.",
+        "image": "/steps/ad/ad6.png"
+      },
+      {
+        "id": "step7",
+        "description": "Demonstrate account recovery by resetting a user’s AD password and verifying login with updated credentials.",
+        "image": "/steps/ad/ad7.png"
+      }
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Built a foundation in enterprise identity",
+        "description": "Deploying and promoting AD DS taught me how central a Domain Controller is to Windows-based networks."
+      },
+      {
+        "id": "r2",
+        "title": "Mastered user and group management",
+        "description": "Creating users, OUs, and security groups reinforced best practices for least-privilege access."
+      },
+      {
+        "id": "r3",
+        "title": "Gained confidence with GPO design",
+        "description": "Linking and tuning GPOs across OUs showed me how to scale policy enforcement in a large environment."
+      },
+      {
+        "id": "r4",
+        "title": "Practiced account recovery workflows",
+        "description": "Resetting passwords and validating policies prepared me to handle real-world credential incidents quickly."
+      }
+    ],
+    "resources": [
+      {
+        "id": "aduc-1",
+        "href": "https://docs.microsoft.com/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services",
+        "icon": "/icons/icon1.png",
+        "title": "Install AD DS Guide",
+        "description": "Microsoft documentation on installing and configuring Active Directory Domain Services."
+      },
+      {
+        "id": "gpo-1",
+        "href": "https://docs.microsoft.com/windows-server/identity/grouppolicy/group-policy-overview",
+        "icon": "/icons/icon2.png",
+        "title": "GPO Overview",
+        "description": "Introduction to Group Policy Objects and best practices."
+      },
+      {
+        "id": "ou-1",
+        "href": "https://docs.microsoft.com/windows-server/identity/ad-ds/plan/organizational-units-and-delegation",
+        "icon": "/icons/icon3.png",
+        "title": "OU & Delegation",
+        "description": "How to structure OUs and delegate administration."
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [{ "label": "Objective", "id": "overview" }]
+      },
+      {
+        "label": "Tools",
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Install AD DS & DNS", "id": "step1" },
+          { "label": "Promote Domain Controller", "id": "step2" },
+          { "label": "Create Domain Users", "id": "step3" },
+          { "label": "Join Workstation", "id": "step4" },
+          { "label": "Build OUs & Groups", "id": "step5" },
+          { "label": "Configure GPOs", "id": "step6" },
+          { "label": "Reset User Password", "id": "step7" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [{ "label": "Lessons Learned", "id": "reflections" }]
+      }
+    ]
+  },
+  {
+    "slug": "po1s0n1vy-website-compromise",
+    "title": "Incident Triage: Po1s0n1vy Website Compromise",
+    "statement": "In this video, I’ll walk you through the end-to-end triage of a website compromise using Splunk Boss SOC Virtual Lab",
+    "videoUrl": "https://www.youtube.com/embed/9T8KU8cpNrs?si=MsjreR4VgQsiIEQ7",
+    "image": "/SIEMLab.png",
+    "tags": ["Incident Response", "SOC", "Log Analysis", "OSINT", "SIEM"],
+    "year": 2025,
+    "objective": "This demonstration walks through using Splunk—ingesting Pastebin evidence and web server logs, crafting Search Processing Language searches to isolate scanning and brute-force Internet Protocol addresses, leveraging open-source intelligence and VirusTotal for enrichment, fingerprinting the content management system and defacement artifacts, extracting and correlating malware hashes and event timelines—to deliver rapid incident insights and support targeted remediation.",
+    "tools": [
+      "Splunk",
+      "Search Proccessing Language (SPL)",
+      "md5sum/sha256sum",
+      "VirusTotal",
+      "Search Engine",
+      "BOTS Dataset",
+      "Open-Source Intelligence (OSINT)"
+    ],
+    "concepts": [
+      "Evidence parsing",
+      "Scanner detection",
+      "CMS fingerprinting",
+      "Defacement analysis",
+      "Dynamic DNS enumeration",
+      "Brute-force identification",
+      "Malware hash analysis",
+      "Static binary analysis",
+      "Timeline correlation"
+    ],
+    "steps": [
+      {
+        "id": "step1",
+        "description": "Determine the likely IPv4 address used by the Po1s0n1vy group to scan imreallynotbatman.com for web-application vulnerabilities.",
+        "image": "/steps/siem/siem1.png"
+      },
+      {
+        "id": "step2",
+        "description": "Identify the company that created the web vulnerability scanner used by Po1s0n1vy.",
+        "image": "/steps/siem/siem2.png"
+      },
+      {
+        "id": "step3",
+        "description": "Detect the content management system powering imreallynotbatman.com.",
+        "image": "/steps/siem/siem3.png"
+      },
+      {
+        "id": "step4",
+        "description": "Pinpoint the IPv4 address likely used for brute-force password attacks against imreallynotbatman.com.",
+        "image": "/steps/siem/siem4.png"
+      },
+      {
+        "id": "step5",
+        "description": "Find the name of the executable uploaded by Po1s0n1vy during the compromise.",
+        "image": "/steps/siem/siem5.png"
+      },
+      {
+        "id": "step6",
+        "description": "Compute the MD5 hash of the executable uploaded by Po1s0n1vy.",
+        "image": "/steps/siem/siem6.png"
+      },
+      {
+        "id": "step7",
+        "description": "Locate the filename of the page used to deface imreallynotbatman.com.",
+        "image": "/steps/siem/siem7.png"
+      },
+      {
+        "id": "step8",
+        "description": "Extract the fully qualified domain name associated with the dynamic DNS used in the attack.",
+        "image": "/steps/siem/siem8.png"
+      },
+      {
+        "id": "step9",
+        "description": "Identify the IPv4 address tied to pre-staged attack domains used against Wayne Enterprises.",
+        "image": "/steps/siem/siem9.png"
+      },
+      {
+        "id": "step10",
+        "description": "Determine the first password attempted during the brute-force sequence.",
+        "image": "/steps/siem/siem10.png"
+      },
+      {
+        "id": "step11",
+        "description": "Identify the six-character Coldplay song used as a password in the brute-force attack.",
+        "image": "/steps/siem/siem11.png"
+      },
+      {
+        "id": "step12",
+        "description": "Reveal the correct administrator password for the content management system running imreallynotbatman.com.",
+        "image": "/steps/siem/siem12.png"
+      },
+      {
+        "id": "step13",
+        "description": "Calculate the average length of all passwords used in the brute-force attack.",
+        "image": "/steps/siem/siem13.png"
+      },
+      {
+        "id": "step14",
+        "description": "Measure the seconds elapsed between discovering the correct password and the site compromise.",
+        "image": "/steps/siem/siem14.png"
+      },
+      {
+        "id": "step15",
+        "description": "Count the total number of unique passwords attempted during the brute-force attack.",
+        "image": "/steps/siem/siem15.png"
+      },
+      {
+        "id": "step16",
+        "description": "Provide the SHA-256 hash of the spear-phish malware sample related to Po1s0n1vy's initial attack.",
+        "image": "/steps/siem/siem16.png"
+      },
+      {
+        "id": "step17",
+        "description": "Identify the special hexadecimal code associated with the customized malware sample.",
+        "image": ""
+      }
+    ],
+    "reflections": [
+      {
+        "id": "r1",
+        "title": "Enhanced scanner and brute-force detection",
+        "description": "Identifying scanner IPs and brute-force sources improved my ability to spot automated reconnaissance and credential guessing."
+      },
+      {
+        "id": "r2",
+        "title": "Refined CMS and defacement analysis",
+        "description": "Fingerprinting the CMS and locating defacement artifacts showed me how to contextualize web compromises for rapid response."
+      },
+      {
+        "id": "r3",
+        "title": "Strengthened malware hash workflows",
+        "description": "Computing MD5/SHA-256 hashes and integrating threat-intel lookups reinforced best practices for artifact triage."
+      },
+      {
+        "id": "r4",
+        "title": "Practiced timeline correlation",
+        "description": "Calculating time deltas between key events highlighted the urgency of attacker actions and the need for speedy mitigation."
+      }
+    ],
+    "resources": [
+      {
+        "id": "splunk-1",
+        "href": "https://www.splunk.com",
+        "icon": "/icons/icon1.png",
+        "title": "Splunk Platform",
+        "description": "Collects, indexes, and analyzes machine data for security monitoring and investigation."
+      },
+      {
+        "id": "splunk-spl",
+        "href": "https://docs.splunk.com/Documentation/SPL",
+        "icon": "/icons/icon2.png",
+        "title": "Search Processing Language",
+        "description": "Splunk’s query language for searching, filtering, and transforming event data."
+      },
+      {
+        "id": "bots-dataset",
+        "href": "https://www.kaggle.com/datasets/cic/botnet-activity-dataset",
+        "icon": "/icons/icon3.png",
+        "title": "BOTS Dataset",
+        "description": "Dataset of botnet traffic and behavior patterns for threat analysis and detection tuning."
+      }
+    ],
+    "sidebar": [
+      {
+        "label": "Overview",
+        "items": [{ "label": "Objective", "id": "overview" }]
+      },
+      {
+        "label": "Tools",
+        "items": [{ "label": "Toolset", "id": "tools" }]
+      },
+      {
+        "label": "Concepts",
+        "items": [{ "label": "Key Concepts", "id": "concepts" }]
+      },
+      {
+        "label": "Methodology",
+        "items": [
+          { "label": "Detect Scanner IP", "id": "step1" },
+          { "label": "Identify Scanner Vendor", "id": "step2" },
+          { "label": "Detect CMS", "id": "step3" },
+          { "label": "Locate Brute-Force IP", "id": "step4" },
+          { "label": "Extract Executable Name", "id": "step5" },
+          { "label": "Compute Executable MD5", "id": "step6" },
+          { "label": "Find Defacement File", "id": "step7" },
+          { "label": "Extract Dynamic DNS FQDN", "id": "step8" },
+          { "label": "Resolve Pre-staged IP", "id": "step9" },
+          { "label": "List First Password", "id": "step10" },
+          { "label": "Identify Password Song", "id": "step11" },
+          { "label": "Determine Admin Password", "id": "step12" },
+          { "label": "Calc Avg Password Length", "id": "step13" },
+          { "label": "Compute Time Delta", "id": "step14" },
+          { "label": "Count Unique Passwords", "id": "step15" },
+          { "label": "Lookup Malware SHA-256", "id": "step16" },
+          { "label": "Find Hex Marker", "id": "step17" }
+        ]
+      },
+      {
+        "label": "Reflections",
+        "items": [{ "label": "Lessons Learned", "id": "reflections" }]
+      }
+    ]
+  },
+  {
     "slug": "endpoint-forensics-triage",
     "title": "Endpoint Forensics and Threat Triage Using Cyber Triage",
     "statement": "In this video, I’ll walk you through the process of performing endpoint forensics and threat triage with Cyber Triage",
@@ -642,7 +986,7 @@
     "slug": "dns-configuration-demo",
     "title": "DNS Configuration Demo",
     "statement": "In this video, I’ll walk you through the end-to-end process of configuring DNS on a Windows Server and a Windows Client",
-    "videoUrl": "https://www.youtube.com/embed/F-adZW9ATMU?si=ua6asxtRRoUKpikr",
+    "videoUrl": "https://www.youtube.com/embed/ms5OW30MNXA?si=j_T1fc5L033eWS6C",
     "image": "/DNSConfig.png",
     "tags": [
       "DNS Security",
@@ -768,9 +1112,9 @@
 
   {
     "slug": "acl-implementation-network-security",
-    "title": "Demonstrating Access Control Lists Implementation for Network Security",
+    "title": "Demonstrating Access Control Lists Implementation",
     "statement": "In this video, I’ll guide you through implementing both standard and extended ACLs on network routers",
-    "videoUrl": "https://www.youtube.com/embed/F-adZW9ATMU?si=ua6asxtRRoUKpikr",
+    "videoUrl": "https://www.youtube.com/embed/bczDNpQXkeQ?si=ekHIWoe5P8CmRedM",
     "image": "/ACLNetworkSecurity.png",
     "tags": [
       "ACL",
@@ -881,7 +1225,7 @@
         "id": "acl-2",
         "href": "https://networklessons.com/cisco/ccna-routing-and-switching/standard-and-extended-acl/",
         "icon": "/icons/icon2.png",
-        "title": "NetworkLessons ACL Tutorial",
+        "title": "Network Lessons ACL Tutorial",
         "description": "In-depth tutorial on ACL types and configuration examples."
       },
       {

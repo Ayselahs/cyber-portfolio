@@ -17,11 +17,13 @@ export default function SkillsSection() {
               Threat Detection & Analysis
             </div>
             <p className="text-gray-600 mb-2 text-sm mb-3">
-              I leverage Splunk to monitor both Windows and Linux environments,
-              performing real-time log analysis to uncover malware originating
-              from Kali-based attack vectors. My presentations demonstrate how
-              to ingest, parse, and triage alerts so that anomalies do not go
-              unnoticed.
+              Conducted comprehensive malicious email analysis through
+              systematic header inspection, attachment extraction and hashing,
+              and threat intelligence correlation using VirusTotal and OSINT
+              sources. My Splunk investigations include crafting advanced SPL
+              queries to isolate malicious IP addresses, correlating attack
+              timelines from web server logs, and integrating Pastebin evidence
+              for website compromise scenarios like the Po1s0n1vy incident.
             </p>
 
             <span className="inline-block text-xs px-3 py-1 bg-blue-100 text-blue-600 rounded-full">
@@ -31,14 +33,15 @@ export default function SkillsSection() {
           {/* Service Cards */}
           <div className="bg-white rounded-xl p-6 shadow-md justify-between min-h-[180px]">
             <div className="font-bold text-slate-600 mb-3">
-              Incident Response Planning
+              Digital Forensics & Incident Response
             </div>
             <p className="text-gray-600 mb-2 text-sm mb-3">
-              I have developed and walked teams through end-to-end incident
-              response playbooks—covering preparation, identification,
-              containment, eradication, recovery, and lessons learned. My video
-              walkthrough breaks down each phase with practical examples and
-              tabletop exercises.
+              Performed endpoint forensics and threat triage using Cyber Triage
+              to analyze compromised hosts, validate malicious artifacts, and
+              produce comprehensive incident reports. My methodology includes
+              systematic artifact analysis, false-positive validation, and rapid
+              response procedures for identifying and documenting security
+              incidents across Windows environments.
             </p>
 
             <span className="text-xs px-3 py-1 bg-blue-100 text-blue-600 rounded-full">
@@ -48,13 +51,16 @@ export default function SkillsSection() {
           {/* Service Cards */}
           <div className="bg-white rounded-xl p-6 shadow-md justify-between min-h-[180px]">
             <div className="font-bold text-slate-600 mb-3">
-              Cloud Security & Networking
+              Cloud Security & Infrastucture
             </div>
             <p className="text-gray-600 mb-2 text-sm mb-3">
-              Through hands-on IAM management and VPC design I ensure
-              least-privilege access and network segmentation in Amazon Web
-              Services. I have built, tested, and documented secure multi-AZ
-              VPCs, subnets, security-group policies, and cross-account roles.
+              Designed and deploy secure AWS architectures including custom VPCs
+              with multi-AZ public/private subnets, Internet and NAT Gateway
+              configurations, and Auto Scaling Groups with Application Load
+              Balancers. My IAM implementations enforce least-privilege access
+              through role-based groups and policy management, while my EC2
+              deployments include security group configurations and user-data
+              automation for scalable web infrastructure.
             </p>
 
             <span className="text-xs px-3 py-1 bg-blue-100 text-blue-600 rounded-full">
@@ -64,18 +70,21 @@ export default function SkillsSection() {
           {/* Service Cards */}
           <div className="bg-white rounded-xl p-6 shadow-md justify-between min-h-[180px]">
             <div className="font-bold text-slate-600 mb-3">
-              Full-Stack Web Development
+              Security-Focused Web Development
             </div>
             <p className="text-gray-600 mb-2 text-sm mb-3">
-              From early Dreamweaver projects to modern Next.js + Node.js +
-              MongoDB applications, I craft responsive, data-driven web
-              experiences. I build RESTful APIs, integrate NoSQL databases, and
-              implement authentication flows—all with emphasis on performance,
-              accessibility, and maintainability
+              Built secure web applications and portfolio sites using modern
+              frameworks, with emphasis on implementing proper authentication
+              flows, input validation, and secure coding practices. My
+              development approach integrates security considerations from the
+              ground up, including protection against common web vulnerabilities
+              like XSS and SQL injection, while maintaining responsive design
+              and optimal performance for showcasing cybersecurity projects and
+              technical demonstrations.
             </p>
 
             <span className="text-xs px-3 py-1 bg-blue-100 text-blue-600 rounded-full">
-              Adobe Dreamweaver Certified
+              Masters in Web Development
             </span>
           </div>
         </div>
