@@ -18,8 +18,8 @@ export default function HeroSection() {
         </h1>
         <p className="text-slate-600 mb-6">
           <b>
-            Certificate in Cybersecurity | Bachelors in Digital Arts & Sciences
-            | Masters in Web Design & Communications
+            Certificate in Cybersecurity | Masters in Web Design &
+            Communications | Bachelors in Digital Arts & Sciences
           </b>
           <br />
           Passionate about technology and committed to continuous learning, I am
