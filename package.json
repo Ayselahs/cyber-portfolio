@@ -39,7 +39,7 @@
     "express-rate-limit": "^7.5.0",
     "lucide-react": "^0.510.0",
     "mongodb": "^6.17.0",
-    "next": "^15.3.3",
+    "next": "15.3.8",
     "next-rate-limit": "^0.0.3",
     "rate-limiter-flexible": "^7.1.1",
     "react": "^19.0.0",
